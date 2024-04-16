@@ -1,0 +1,40 @@
+{
+  "name": "@dhmk/di",
+  "version": "0.0.1",
+  "description": "Minimalistic DI library",
+  "keywords": [
+    "di",
+    "dependency injection",
+    "ioc",
+    "inversion of control",
+    "typescript"
+  ],
+  "license": "MIT",
+  "repository": "github:dhmk083/dhmk-di",
+  "exports": {
+    ".": {
+      "node": "./lib/index.js",
+      "import": "./esm/index.js",
+      "types": "./esm/index.d.ts",
+      "default": "./esm/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "lib",
+    "esm"
+  ],
+  "scripts": {
+    "preversion": "npm test && npm run build",
+    "version": "git add -A",
+    "postversion": "git push origin HEAD && git push origin HEAD --tags",
+    "clean": "rm -rf lib esm",
+    "build": "npm run clean && tsc && tsc -m esnext --outDir esm",
+    "test": "tsx --test index.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3"
+  }
+}
