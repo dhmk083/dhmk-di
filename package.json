@@ -1,6 +1,6 @@
 {
   "name": "@dhmk/di",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Minimalistic DI library",
   "keywords": [
     "di",
